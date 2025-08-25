@@ -24,82 +24,85 @@ class _LanguagesState extends State<Languages> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.background_color,
-      body: Column(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 90..h,
-            padding: EdgeInsets.only(top: 25,right: 25,left: 25,),
-            decoration: BoxDecoration(
-              color: AppColor.primary_color,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: (){
-                    Navigator.pop(context);
-                  },
-                  child: SvgPicture.asset('${iconpath}arrowback.svg'),
-                ),
-                Text24(
-                  text: 'Languages',
-                ),
-                Container(),
-              ],
-            ),
-          ),
-          SizedBox(height:40.h,),
-          SizedBox(
-            height: 550..h,
-            child: ListView.builder(
-              itemCount: item.length,
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
-              scrollDirection: Axis.vertical,
-              itemBuilder: (context,index){
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: AppColor.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColor.black.withOpacity(.25),
-                            blurRadius: 4,
-                            spreadRadius: 1,
-                          )
-                        ]
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                            child: Image.asset(item[index]['path'],width: 62..w,height: 62..h),
-                        ),
-                        SizedBox(width: 20..w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text16(
-                              text: item[index]['text'],
-                            ),
-                            Text14(
-                                text: item[index]['subtext'],
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 80..h,
+              padding: EdgeInsets.only(top: 25,right: 25,left: 25,),
+              decoration: BoxDecoration(
+                color: AppColor.primary_color,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.asset('${iconpath}arrowback.svg'),
                   ),
-                );
-              },
+                  Text24(
+                    text: 'Languages',
+                    fontWeight: FontWeight.w400,
+                  ),
+                  Container(),
+                ],
+              ),
             ),
-          ),
-          SizedBox(height:20.h,),
-        ],
+            SizedBox(height:40.h,),
+            SizedBox(
+              height: 550..h,
+              child: ListView.builder(
+                itemCount: item.length,
+                physics: NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context,index){
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          color: AppColor.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColor.black.withOpacity(.25),
+                              blurRadius: 4,
+                              spreadRadius: 1,
+                            )
+                          ]
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                              child: Image.asset(item[index]['path'],width: 62..w,height: 62..h),
+                          ),
+                          SizedBox(width: 20..w),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text16(
+                                text: item[index]['text'],
+                              ),
+                              Text14(
+                                  text: item[index]['subtext'],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+
+                    ),
+                  );
+                },
+              ),
+            ),
+            SizedBox(height:20.h,),
+          ],
+        ),
       ),
     );
   }

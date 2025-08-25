@@ -19,7 +19,7 @@ class NotificationScreen extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 90..h,
+              height: 80..h,
               padding: EdgeInsets.only(top: 25,right: 25,left: 25,),
               decoration: BoxDecoration(
                 color: AppColor.primary_color,
@@ -35,6 +35,7 @@ class NotificationScreen extends StatelessWidget {
                   ),
                   Text24(
                     text: 'Notifications',
+                    fontWeight: FontWeight.w400,
                   ),
                   Container(),
                 ],
@@ -42,7 +43,7 @@ class NotificationScreen extends StatelessWidget {
             ),
             SizedBox(height:40.h,),
             ListView.builder(
-              itemCount: 4,
+              itemCount: 2,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               padding: EdgeInsets.symmetric(horizontal: 25),

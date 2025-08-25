@@ -18,7 +18,7 @@ class PaymentMethod extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 90..h,
+            height: 80..h,
             padding: EdgeInsets.only(top: 25,right: 25,left: 25,),
             decoration: BoxDecoration(
               color: AppColor.primary_color,
@@ -34,6 +34,7 @@ class PaymentMethod extends StatelessWidget {
                 ),
                 Text24(
                   text: 'Payment Method',
+                  fontWeight: FontWeight.w400,
                 ),
                 Container(),
               ],

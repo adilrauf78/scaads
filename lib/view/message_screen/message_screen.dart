@@ -35,7 +35,7 @@ class MessageScreen extends StatelessWidget {
             ),
             SizedBox(height:40..h,),
             ListView.builder(
-              itemCount: 10,
+              itemCount: 1,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               padding: EdgeInsets.symmetric(horizontal: 25),
